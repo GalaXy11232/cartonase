@@ -1,0 +1,24 @@
+* {
+    background-color: #ffffff;
+    position: relative;
+}
+
+input {
+    background-color:#ffffff;
+    color: #000000;
+    transition: width 0.4s ease-in-out;
+    border-radius: 2em;
+    width: 20%;
+    height: 2em;
+    padding-left: 2em;
+}
+input:focus {
+    width: 40%;
+}
+
+.submit {
+    width: 5%;
+    border: none;
+    background-color: #cccccc;
+    border-radius: 2em;
+}

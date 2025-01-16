@@ -3,18 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>skibi</title>
+    <title>Cartonase</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <input type="text" id = "typeinput" placeholder="Introdu o intrbare">
-    <button onclick = returntext()>Submit</button>
+    <input type="text" id = "typeinput" placeholder="Introdu o intrebare"><br>
+    <button onclick = returntext() class="submit">Submit</button>
 
-    <script>
-        function returntext() {
-            const inputform = document.getElementById("typeinput");
-            alert(inputform.value);
-        }
-
-    </script>
+    <script src = "script.js"></script>
 </body>
 </html>
