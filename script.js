@@ -3,7 +3,7 @@ const defaultJSONStructure = {
     "intrebari": [],
     "raspunsuri": []
 }
-
+//ferestra.adaugaAscultatorDeEvenimente();
 window.addEventListener("load", (ev) => {
     // console.log(JSON.parse(localStorage.getItem(localStorageEntry))["raspunsuri"].includes(["1", " 2", " 3", " 4", " 1"]))
     checkLocalStorage(localStorageEntry, defaultJSONStructure);
@@ -28,9 +28,9 @@ function checkEmpty(text) {
         if (textArr[i] != " ") return false;
     
     return true;
-    
 }
 
+//gen adauga date de input gen gen gen gen
 function addInputData(inputIDs) {
 
     const inputQuestion = document.getElementById(inputIDs[0]).value;
@@ -61,6 +61,7 @@ function addInputData(inputIDs) {
 
 }
 
+//gen verifica acolo la intrebari sa vada daca totu e chill
 function checkLocalStorage(entry, value) {
     if (localStorage.getItem(entry) == null) {
         localStorage.setItem(entry, JSON.stringify(value));
