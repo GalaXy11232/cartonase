@@ -3,14 +3,13 @@ const defaultJSONStructure = {
     "intrebari": [],
     "raspunsuri": []
 }
-
+//ferestra.adaugaAscultatorDeEvenimente();
 window.addEventListener("load", (ev) => {
     checkLocalStorage(localStorageEntry, defaultJSONStructure);
     // updateData(localStorageEntry, "intrebari", "balls");
 })
 
-
-
+//e gol? sau nu e gol... asta e intrebarea.
 function checkEmpty(text, isList = false) {
     // if (isList) {
     //     for (i in text) {
@@ -27,19 +26,21 @@ function checkEmpty(text, isList = false) {
         if (textArr[i] != " ") return false;
     
     return true;
-    
 }
 
+//gen adauga date de input gen gen gen gen
 function addInputData(inputIDs) {
     // const inputQuestion = document.getElementById(inputIDs[0]);
     // const inputAnswers = document.getElementById(inputIDs[1]);
+    //erm ce e cu astea de mai sus? ^^^^^^
+    //apropo vezi ca am dat sa faca split dupa VIRGULA.
     const inputQuestion = document.getElementById(inputIDs[0]).value;
-    const inputAnswers = document.getElementById(inputIDs[1]).value.split(" ");
+    const inputAnswers = document.getElementById(inputIDs[1]).value.split(",");
 
     console.log(inputAnswers);
     if (inputQuestion == "clear") { localStorage.clear(); return; }
 
-    // Check for invalid input
+    //input valid OR NAH
     if (inputQuestion.length == 0 || checkEmpty(inputQuestion)) {
         alert("Te rog introdu o intrebare valida.");
         return;
@@ -49,6 +50,7 @@ function addInputData(inputIDs) {
 
 }
 
+//gen verifica acolo la intrebari sa vada daca totu e chill
 function checkLocalStorage(entry, value) {
     if (localStorage.getItem(entry) == null) {
         localStorage.setItem(entry, JSON.stringify(value));
@@ -62,6 +64,7 @@ function checkLocalStorage(entry, value) {
     return true;
 }
 
+//gen la fel ca inainte doar ca se ingroasa gluma
 function updateData(data, key, value) {
     let dataObj = JSON.parse(localStorage.getItem(data));
     
