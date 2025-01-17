@@ -11,27 +11,41 @@ window.addEventListener("load", (ev) => {
 
 
 
-function checkEmpty(text) {
+function checkEmpty(text, isList = false) {
+    // if (isList) {
+    //     for (i in text) {
+    //         let textArr = i.split("");
+    //         for (j in textArr)
+    //             if (textArr[j] != " ") return false;
+            
+    //         return true;
+    //     }  
+    // }
+
     let textArr = text.split("");
     for (i in textArr)
         if (textArr[i] != " ") return false;
     
     return true;
+    
 }
 
-function addQuestion(inputId) {
-    const inputForm = document.getElementById(inputId);
-    const inputValue = inputForm.value;
+function addInputData(inputIDs) {
+    // const inputQuestion = document.getElementById(inputIDs[0]);
+    // const inputAnswers = document.getElementById(inputIDs[1]);
+    const inputQuestion = document.getElementById(inputIDs[0]).value;
+    const inputAnswers = document.getElementById(inputIDs[1]).value.split(" ");
 
-    if (inputValue == "clear") { localStorage.clear(); return; }
+    console.log(inputAnswers);
+    if (inputQuestion == "clear") { localStorage.clear(); return; }
 
     // Check for invalid input
-    if (inputValue.length == 0 || checkEmpty(inputValue)) {
+    if (inputQuestion.length == 0 || checkEmpty(inputQuestion)) {
         alert("Te rog introdu o intrebare valida.");
         return;
     }
 
-    updateData(localStorageEntry, "intrebari", inputValue);
+    updateData(localStorageEntry, "intrebari", inputQuestion);
 
 }
 
