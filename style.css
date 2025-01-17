@@ -17,7 +17,6 @@ input:focus {
 }
 
 .submit {
-    width: 5%;
     border: none;
     background-color: #cccccc;
     border-radius: 2em;
