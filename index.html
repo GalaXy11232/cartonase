@@ -10,9 +10,13 @@
 
 </head>
 <body>
-    <input autocomplete = "off" type="text" id = 'question' placeholder="Introdu o intrebare"><br>
-    <input autocomplete = "off" type="text" id = 'answers' placeholder="Introdu 4 raspunsuri dar si al catelea e corect"><br>
+    <input  type="text" id = 'question' placeholder="Introdu o intrebare"><br>
+    <input  type="text" id = 'answers' placeholder="Introdu 4 raspunsuri dar si al catelea e corect"><br>
     <button onclick = "addInputData(['question', 'answers'])" class="submit">Submit</button>
+
+    <br><input  type = "file" id = "fileinput">
+    <button onclick = "loadfile()" class="submit">load</button>
+    <button onclick = "savefile()" class="submit">save</button>
 
     <script src = "script.js"></script>
 </body>
