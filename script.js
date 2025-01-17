@@ -11,16 +11,6 @@ window.addEventListener("load", (ev) => {
 
 //e gol? sau nu e gol... asta e intrebarea.
 function checkEmpty(text, isList = false) {
-    // if (isList) {
-    //     for (i in text) {
-    //         let textArr = i.split("");
-    //         for (j in textArr)
-    //             if (textArr[j] != " ") return false;
-            
-    //         return true;
-    //     }  
-    // }
-
     let textArr = text.split("");
     for (i in textArr)
         if (textArr[i] != " ") return false;
@@ -30,9 +20,6 @@ function checkEmpty(text, isList = false) {
 
 //gen adauga date de input gen gen gen gen
 function addInputData(inputIDs) {
-    // const inputQuestion = document.getElementById(inputIDs[0]);
-    // const inputAnswers = document.getElementById(inputIDs[1]);
-    //erm ce e cu astea de mai sus? ^^^^^^
     //apropo vezi ca am dat sa faca split dupa VIRGULA.
     const inputQuestion = document.getElementById(inputIDs[0]).value;
     const inputAnswers = document.getElementById(inputIDs[1]).value.split(",");
@@ -74,28 +61,6 @@ function updateData(data, key, value) {
     console.log(dataObj);
 
     localStorage.setItem(data, JSON.stringify(dataObj));
-
-    // fetch json data
-        // fetch(jsonPath).then(
-        //     response => { return response.json(); }
-        // ).then(
-        //     data => {
-        //         console.log(data);
-        //         var cpy = data[key];
-        //         // console.log(data.intrebari, typeof(data.intrebari))
-        //         cpy.push(value);
-        //         console.log("cpu", cpy);
-        //     }
-        // )
-
-        // fetch(jsonPath).then(
-        //     response => {return response.json();}
-        // ).then(
-        //     data => {
-        //         console.log(data);
-        //     }
-        // )
-    
 }
 
 function existsIn(obj, key, value) {
