@@ -5,10 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cartonase</title>
     <link rel="stylesheet" href="style.css">
+    
+    <script src = "intrebari.json"></script>
+
 </head>
 <body>
-    <input type="text" id = "typeinput" placeholder="Introdu o intrebare"><br>
-    <button onclick = returntext() class="submit">Submit</button>
+    <input autocomplete = "off" type="text" id = "typeinput" placeholder="Introdu o intrebare"><br>
+    <input autocomplete = "off" type="text" id = "typeinput" placeholder="Introdu 4 raspunsuri dar si al catelea e corect"><br>
+    <button onclick = addQuestionAnswers() class="submit">Submit</button>
 
     <script src = "script.js"></script>
 </body>
