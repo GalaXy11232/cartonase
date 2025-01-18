@@ -11,7 +11,6 @@ window.addEventListener("load", (ev) => {
 })
 
 
-
 function checkEmpty(text) {
     // if (isList) {
     //     for (i in text) {
@@ -88,6 +87,7 @@ function updateData(question, answers) {
 
     localStorage.setItem(localStorageEntry, JSON.stringify(dataObj));
 
+    creeazaCartonas(dataObj.intrebari.length - 1);
 }
 
 function clearStorage() {

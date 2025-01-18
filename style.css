@@ -45,3 +45,20 @@ input:focus {
     background-color: #cccccc;
     border-radius: 2em;
 }
+
+
+/* # Modificat de neamtu */
+#container-cartonase {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    background-color: darkgray;
+}
+
+.cartonas {
+    background-color: gray;
+    border: 5px solid white;
+    border-radius: 10%;
+    width: fit-content;
+    padding: 10px;
+}
