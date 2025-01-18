@@ -3,7 +3,7 @@ const defaultJSONStructure = {
     "intrebari": [],
     "raspunsuri": []
 }
-//ferestra.adaugaAscultatorDeEvenimente();
+
 window.addEventListener("load", (ev) => {
     // console.log(JSON.parse(localStorage.getItem(localStorageEntry))["raspunsuri"].includes(["1", " 2", " 3", " 4", " 1"]))
     checkLocalStorage(localStorageEntry, defaultJSONStructure);
@@ -12,16 +12,6 @@ window.addEventListener("load", (ev) => {
 
 
 function checkEmpty(text) {
-    // if (isList) {
-    //     for (i in text) {
-    //         let textArr = i.split("");
-    //         for (j in textArr)
-    //             if (textArr[j] != " ") return false;
-            
-    //         return true;
-    //     }  
-    // }
-
     let textArr = text.split("");
     for (i in textArr)
         if (textArr[i] != " ") return false;
@@ -29,15 +19,15 @@ function checkEmpty(text) {
     return true;
 }
 
-//gen adauga date de input gen gen gen gen
+
 function addInputData(inputIDs) {
     const inputQuestion = document.getElementById(inputIDs[0]).value;
     const inputAnswerString = document.getElementById(inputIDs[1]).value;
     const inputAnswers = inputAnswerString.split(",");
 
     console.log(inputAnswers);
-    if (inputQuestion == "clear") { localStorage.clear(); return; }
-    // if (inputQuestion == "skib") { download(localStorage.getItem(localStorageEntry), 'intrebari.json'); return; }
+    if (inputQuestion == "clear") { clearStorage(); return; }
+
 
     // Check for invalid input
     if (
@@ -59,7 +49,7 @@ function addInputData(inputIDs) {
 
 }
 
-//gen verifica acolo la intrebari sa vada daca totu e chill
+
 function checkLocalStorage(entry, value) {
     if (localStorage.getItem(entry) == null) {
         localStorage.setItem(entry, JSON.stringify(value));
