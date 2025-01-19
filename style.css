@@ -1,11 +1,11 @@
 @keyframes cartonasOff {
-    from {top: 0; opacity: 1;}
-    to {top: 100px; opacity: 0;}
+    from {bottom: 0; opacity: 1;}
+    to {bottom: 100px; opacity: 0;}
 }
 
 @keyframes cartonasOn {
-    from {top: 100px; opacity: 0;}
-    to {top: 0; opacity: 1;}
+    from {bottom: 100px; opacity: 0;}
+    to {bottom: 0; opacity: 1;}
 }
 
 body {
@@ -182,6 +182,12 @@ input[type="text"]:focus {
     font-size: 275%;
 }
 
+#counterCartonase {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    text-align: center;
+}
+
 
 #intrebare-cartonas {
     text-align: center;
@@ -201,6 +207,19 @@ input[type="text"]:focus {
     left: 0;
     right: 0;
     text-align: center;
+}
+
+#noCartonasShowcase {
+    position: fixed;
+    top: 0; bottom: 0; left: 0; right: 0;
+    font-size: 150%;
+    color: gray;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -5;
 }
 
 .raspunsuri-wrapper {
@@ -232,6 +251,8 @@ input[type="text"]:focus {
     background-color: #272727;
     color: white;
 }
+
+
 
 
 
@@ -324,7 +345,7 @@ input[type="text"]:focus {
   
   /* Modal Content */
   .modal-content {
-    background-color: #fefefe;
+    background-color: #cccccc;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;

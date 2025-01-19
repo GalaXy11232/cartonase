@@ -92,7 +92,7 @@ function saveModal() {
 
 function buildCartonas() {
     let titlu = document.getElementById("titluModal");
-    titlu.textContent = "Creeare cartonas";
+    titlu.textContent = "Creare cartonas";
 
     let intrebareaNode = document.getElementById("modal-intrebarea");
     let raspunsuriNodes = [
@@ -160,7 +160,7 @@ function saveCartonas() {
     if (allUnchecked) { alertWrong(); return; }
 
 
-    let raspunsuri = []
+    let raspunsuri = [];
     for (let i of raspunsuriNodes) raspunsuri.push(i.value);
     raspunsuri.push(String(corrIndex));
 

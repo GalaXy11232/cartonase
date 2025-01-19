@@ -2,7 +2,19 @@ const animationTime = 0.35;
 var animationRunning = false;
 
 window.addEventListener("load", () => {
-    setupCartonas(0);
+    document.getElementById("counterCartonase").textContent = "1 / " + JSON.parse(localStorage.getItem(localStorageEntry)).intrebari.length;
+
+    if (JSON.parse(localStorage.getItem(localStorageEntry)).intrebari.length > 0) {
+        document.getElementById("container-showcase").style.visibility = "visible";
+        document.getElementById("noCartonasShowcase").style.visibility = "hidden";
+        document.getElementById("counterCartonase").style.visibility = "visible";
+        setupCartonas(0);
+    }
+
+    else {
+        document.getElementById("noCartonasShowcase").style.visibility = "visible";
+        document.getElementById("counterCartonase").style.visibility = "hidden";
+    }
 })
 
 function setupCartonas(INDEXCARTON) {
@@ -36,18 +48,26 @@ function setupCartonas(INDEXCARTON) {
 function dezvaluieCartonas(state) {
     if (state == 0) document.getElementById("cartonas-showcase").style.transform = "rotateY(180deg)";
     else if (state == 1) document.getElementById("cartonas-showcase").style.transform = "rotateY(0deg)";
-    else console.log("error turning the cartonas");
+    else console.log("error turning the cartonas :(");
 }
 
 function switchCartonas(direction, indexfrom) {
     if (animationRunning) return;
 
+    // console.log(document.getElementById("intrebare-cartonas").textContent, Number(JSON.parse(localStorage.getItem(localStorageEntry)).intrebari.indexOf(document.getElementById("intrebare-cartonas").textContent) + 1)
+
+        
     // intoarce cartonasul pe fata in caz ca e pe spate
     dezvaluieCartonas(1);
 
     if (indexfrom == 0 && direction == -1) indexfrom = JSON.parse(localStorage.getItem(localStorageEntry)).intrebari.length - 1;
     else if (indexfrom == JSON.parse(localStorage.getItem(localStorageEntry)).intrebari.length - 1 && direction == 1) indexfrom = 0;
     else indexfrom += direction;
+
+    document.getElementById("counterCartonase").textContent = 
+        indexfrom + 1
+        + " / " 
+        + JSON.parse(localStorage.getItem(localStorageEntry)).intrebari.length; 
 
     transitionOff();
     setTimeout(() => {

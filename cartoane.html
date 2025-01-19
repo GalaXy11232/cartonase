@@ -12,9 +12,12 @@
     
     <a href="index.html" class="back">Înapoi</a>
 
-    <div id = "container-showcase">
+    <div id = "noCartonasShowcase">
+        <h1>[ Nu exista cartonase valabile. Du-te la pagina EDITARE. ]</h1>
+    </div>
+
+    <div id = "container-showcase" style = "visibility: hidden;">
         <div id = "butonStanga" class = "butonShowcase" onclick = "switchCartonas(-1, 0);"><</div>
-        
         
         <div id = "cartonas-showcase">
             <div id = "fataShowcase">
@@ -52,7 +55,7 @@
 
     </div>
 
-
+    <h2 id = "counterCartonase"></h2>
     <script src = "showcase.js"></script>
 </body>
 </html>
