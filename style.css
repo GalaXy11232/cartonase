@@ -90,6 +90,7 @@ input[type="text"]:focus {
 
 /* # Modificat de neamtu */
 #container-cartonase {
+    perspective: 1000px;
     display: flex;
     gap: 20px;
     padding: 20px;
@@ -97,9 +98,101 @@ input[type="text"]:focus {
 }
 
 .cartonas {
+    position: relative;
+    transition: 0.6s;
+    transform-style: preserve-3d;
+
     background-color: gray;
     border: 5px solid white;
-    border-radius: 10%;
-    width: fit-content;
+    min-width: 150px;
+    border-radius: 20px;
     padding: 10px;
 }
+
+
+.cartonasSpate, .cartonasFata {
+    text-align: center;
+    backface-visibility: hidden;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.cartonasFata {
+    transform: rotateY(0deg);
+    position: relative !important;
+    z-index: 2;
+}
+
+.cartonasSpate {
+    width: 100%;
+    height: 100%;
+    transform: rotateY(180deg);
+}
+
+
+.cartonas-topbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cartonas-link {
+    position: relative;
+    transition: 0.2s ease-in;
+}
+.cartonas-link:hover {
+    color: wheat;
+    cursor: pointer;
+    font-size: 150%;
+}
+
+
+
+#adaugaCartonasLink {
+    font-size: 250%;
+}
+#cartonasEntry {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* The Modal (background)  {multumesc w3schools}*/
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 10; /* Sit on top */
+    padding-top: 10px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }

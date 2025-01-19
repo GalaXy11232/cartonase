@@ -81,6 +81,14 @@ function updateData(question, answers) {
 }
 
 function clearStorage() {
+    let container = document.getElementById("container-cartonase");
+    for (let node in container.children) {
+        // if (node.getAttribute("id") == "cartonasEntry") continue;
+        if (typeof(container.children[1]) == "undefined") break;
+        
+        container.removeChild(container.children[1]);
+    }
+
     localStorage.clear();
     localStorage.setItem(localStorageEntry, JSON.stringify(defaultJSONStructure));
 }
@@ -104,15 +112,23 @@ function existsIn(obj, key, value) {
 
 
 function loadfile() {
-    let file = document.getElementById("fileinput").files[0];
+    clearStorage();
+
+    setTimeout(() => {
+        let file = document.getElementById("fileinput").files[0];
     
-    var reader = new FileReader();
-    reader.onload = function(e) {
-        var contents = e.target.result;
-        
-        localStorage.setItem(localStorageEntry, contents)
-    };
-    reader.readAsText(file);
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            var contents = e.target.result;
+            
+            localStorage.setItem(localStorageEntry, contents);
+        };
+        reader.readAsText(file);
+        setTimeout(() => {
+            checkCartonase();
+        }, 100);
+
+    }, 100);
 }
 
 function savefile() {

@@ -7,31 +7,92 @@
     <link rel="stylesheet" href="style.css">
     <script src = "script.js"></script>
     <script src = "cartonase.js"></script>
+    <script src = "modal.js"></script>
+    
 </head>
 <body>
-    <input  type="text" id = 'question' placeholder="Introdu o intrebare"><br>
-    <input  type="text" id = 'answers' placeholder="Introdu 4 raspunsuri dar si al catelea e corect"><br>
-    <button onclick = "addInputData(['question', 'answers'])" class="submit">Submit</button>
-
-    <br><br><input  type = "file" id = "fileinput">
+    <!-- <input type="text" id = 'question' placeholder="Introdu o intrebare"><br>
+    <input type="text" id = 'answers' placeholder="Introdu 4 raspunsuri dar si al catelea e corect"><br>
+    <button onclick = "addInputData(['question', 'answers'])" class="submit">Submit</button> -->
+    
+    <input  type = "file" id = "fileinput">
     <button onclick = "loadfile()" class="submit">load</button>
     <button onclick = "savefile()" class="submit">save</button>
 
     <br><br>
-    <!-- <button onclick = creeazaCartonas()>create new</button> -->
-    <div id = "container-cartonase">
-        <div class = "cartonas">
-            <h3 class = "titlu-cartonas">placeholder?</h3>
-            <hr>
 
-            <ol>
-                <li>intreb1</li>
-                <li>intreb2</li>
-                <li>intreb3</li>
-                <li>intreb4</li>
-            </ol>
+    <div id = "container-cartonase">
+        <div class = "cartonas" id = "cartonasEntry">
+
+            <a onclick = "buildCartonas()" id = "adaugaCartonasLink" class = "cartonas-link">➕</a>
+            <!-- <div class = "cartonasFata">                
+                <div class = "cartonas-topbar">
+                    <a class = "cartonas-X" id = "-1">X</a>
+                    <a class = "cartonas-edit">✏</a>
+                </div>
+
+                <h3 class = "titlu-cartonas">placeholder?</h3>
+                <hr>
+
+                <ol>
+                    <li>intreb1</li>
+                    <li>intreb2</li>
+                    <li>intreb3</li>
+                    <li>intreb4</li>
+                </ol>
+
+                <br>
+                <button onclick = "sk()">Afiseaza</button>
+            </div>
+            
+            <div class = "cartonasSpate">
+
+                <h1>SKibidi toilet?@</h1>
+                <button onclick = "sz()">Ascunde</button>
+            </div> -->
+        </div>
+
+        
+    </div>
+
+
+    <br><br><br><br><br><br>
+    <!-- <button onclick = "openModal()">OpenModal</button> -->
+    <div id = "cartonasModal" class = "modal">
+        <div class = "modal-content">
+            <span onclick = "closeModal()" class = "close">X</span>
+            <h1 id = "titluModal">Editare cartonas</h1> <hr>
+            
+            <form>
+                <h3>Intrebarea</h3>
+                <input id = "modal-intrebarea" type="text" value = "ia-ma">
+
+                <h4>Raspunsul 1</h4>
+                <input id = "modal-raspunsul1" type="text" value = "1">
+                <input id = "modalCheckbox1" type = "radio" name = "raspunsCorect">
+                
+                <h4>Raspunsul 2</h4>
+                <input id = "modal-raspunsul2" type="text" value = "2">
+                <input id = "modalCheckbox2" type = "radio" name = "raspunsCorect">
+                
+                <h4>Raspunsul 3</h4>
+                <input id = "modal-raspunsul3" type="text" value = "3">
+                <input id = "modalCheckbox3" type = "radio" name = "raspunsCorect">
+
+                <h4>Raspunsul 4</h4>
+                <input id = "modal-raspunsul4" type="text" value = "4">
+                <input id = "modalCheckbox4" type = "radio" name = "raspunsCorect">
+            </form>
+            
+            <br><br>
+            <button id = "salveazaModal" onclick = "saveModal()">Salveaza</button>
+            <button id = "creeazaModal" onclick = "saveCartonas()">Creeaza</button>
+
         </div>
     </div>
 
+
+    <!-- MUST STAY BELOW -->
+    <script src = "modal.js"></script>
 </body>
 </html>
