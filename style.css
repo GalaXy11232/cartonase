@@ -17,6 +17,24 @@ body {
     align-items: center;
 }
 
+.back {
+    font-size: 40px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    color: #000;
+    background-color: #cccccc;
+    transition: 0.3s background-color ease-in;
+    text-decoration: none;
+}
+
+.back:hover {
+    background-color: #ff5555;
+}
+
 .title {
     text-align: center;
     font-size: 100px;
@@ -24,7 +42,7 @@ body {
 
 input[type="text"], input[type="file"] {
     background-color:#ffffff;
-    color: #000000;
+    color: #000;
     transition: width 0.4s ease-in-out;
     border-radius: 2em;
     width: 20%;
@@ -40,7 +58,7 @@ input[type="text"]:focus {
     transition: 0.4s height ease-in-out;
     text-decoration: none;
     font-size: 75px;
-    color: #000000;
+    color: #000;
 }
 
 .linkuri {
@@ -91,17 +109,20 @@ input[type="text"]:focus {
 /* # Modificat de neamtu */
 #container-cartonase {
     perspective: 1000px;
+    min-height: 85vh;
+    border-radius: 20px;
     display: flex;
     gap: 20px;
     padding: 20px;
     background-color: darkgray;
+    flex-wrap: wrap;
 }
 
 .cartonas {
     position: relative;
     transition: 0.6s;
     transform-style: preserve-3d;
-
+    max-height: 30vh;
     background-color: gray;
     border: 5px solid white;
     min-width: 150px;
@@ -147,11 +168,10 @@ input[type="text"]:focus {
     font-size: 150%;
 }
 
-
-
 #adaugaCartonasLink {
     font-size: 250%;
 }
+
 #cartonasEntry {
     display: flex;
     justify-content: center;
