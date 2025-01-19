@@ -5,11 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cartonase</title>
     <link rel="stylesheet" href="style.css">
+    <script src = "script.js"></script>
+
 </head>
 <body>
     
     <a href="index.html" class="back">Înapoi</a>
-    <script src = "cartonase.js"></script>
-    <script src = "script.js"></script>
+
+    <div id = "container-showcase">
+        <div id = "butonStanga" class = "butonShowcase" onclick = "switchCartonas(-1, 0);"><</div>
+        
+        
+        <div id = "cartonas-showcase">
+            <div id = "fataShowcase">
+                <h1 id = "intrebare-cartonas"></h1>
+                <hr>
+
+                <div class = "raspunsuri-wrapper">
+                    <div class = "raspunsuri-div" id = "raspuns1">
+                        <h3>1. Raspuns1</h3>
+                    </div>
+                    <div class = "raspunsuri-div" id = "raspuns2">
+                        <h3>2. Raspuns2</h3>
+                    </div>
+                    <div class = "raspunsuri-div" id = "raspuns3">
+                        <h3>3. Raspuns3</h3>
+                    </div>
+                    <div class = "raspunsuri-div" id = "raspuns4">
+                        <h3>4. Raspuns4</h3>
+                    </div>
+                </div>
+
+                <a id = "link-showcaseAfiseaza" class = "cartonas-link" onclick = "dezvaluieCartonas(0)">Afiseaza</a>
+            </div>
+
+            <div id = "spateShowcase">
+                <h1 style = "text-align: center; padding-top: 50px; font-size: 400%; margin-bottom: 50px;">Raspuns: </h1>
+                <div id = "titluSpate">
+                    <h1></h1>
+                </div>
+                <a id = "link-showcaseAscunde" class = "cartonas-link" onclick = "dezvaluieCartonas(1)">Ascunde</a>
+            </div>
+        </div>
+
+        <div id = "butonDreapta" class = "butonShowcase" onclick = "switchCartonas(1, 0);">></div>
+
+    </div>
+
+
+    <script src = "showcase.js"></script>
 </body>
 </html>
