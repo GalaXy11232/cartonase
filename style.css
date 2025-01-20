@@ -1,6 +1,5 @@
 :root {
     --content_clr: #cccccc;
-
 }
 
 @keyframes cartonasOff {
@@ -13,10 +12,25 @@
     to {bottom: 0; opacity: 1;}
 }
 
+html {
+    background-color: #b8814b;
+}
+
 body {
-    background-color: #999999;
+    position: absolute;
+    top: 0;
+    left: 0;
     text-align: center center;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: no-repeat center center fixed;
+    background-image: url("https://t4.ftcdn.net/jpg/10/17/14/75/360_F_1017147508_W12b9ria9kAxE9b6uCkXEwn3Vq1cMekq.jpg");
+    background-size: cover;
+    width: 100vw;
+    border: none;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    z-index: -100;
 }
 
 #START {
@@ -65,6 +79,10 @@ body {
     font-size: 100px;
 }
 
+h1 {
+    color: #000;
+}
+
 input[type="text"], input[type="file"] {
     background-color:#ffffff;
     color: #000;
@@ -87,7 +105,9 @@ input[type="text"]:focus {
 }
 
 .linkuri {
-    background-color: var(--content_clr);
+    background: no-repeat center center fixed;
+    background-image: url("https://i.pinimg.com/736x/72/91/0b/72910b438834b8fea590e60ed0620035.jpg");
+    background-size: cover;
     transition: 0.3s padding ease-in-out;
     border: solid 3px #777777;
     border-radius: 20px;
@@ -126,10 +146,11 @@ input[type="text"]:focus {
 
 .submit {
     border: none;
-    background-color: var(--content_clr);
+    background: no-repeat center center fixed;
+    background-image: url("https://i.pinimg.com/736x/72/91/0b/72910b438834b8fea590e60ed0620035.jpg");
+    background-size: cover;
     border-radius: 2em;
 }
-
 
 /* # Modificat de neamtu */
 
@@ -148,7 +169,9 @@ input[type="text"]:focus {
     min-height: 80vh;
     min-width: 500px;
     width: 75vh;
-    background-color: var(--content_clr);
+    background: no-repeat center center fixed;
+    background-image: url("https://i.pinimg.com/736x/72/91/0b/72910b438834b8fea590e60ed0620035.jpg");
+    background-size: cover;
     border: solid 3px #777777;
     border-radius: 20px;
 
@@ -275,7 +298,7 @@ input[type="text"]:focus {
     display: flex;
     gap: 20px;
     padding: 20px;
-    background-color: darkgray;
+    background-color: #00000000;
     flex-wrap: wrap;
 }
 
@@ -287,7 +310,9 @@ input[type="text"]:focus {
     min-height: 225px;
     max-width: 25vh;
     width: 250px;
-    background-color: var(--content_clr);
+    background: no-repeat center center fixed;
+    background-image: url("https://i.pinimg.com/736x/72/91/0b/72910b438834b8fea590e60ed0620035.jpg");
+    background-size: cover;
     border: solid 3px #777777;
     min-width: 150px;
     border-radius: 20px;
@@ -376,7 +401,9 @@ input[type="text"]:focus {
   
   /* Modal Content */
   .modal-content {
-    background-color: var(--content_clr);
+    background: no-repeat center center fixed;
+    background-image: url("https://i.pinimg.com/736x/72/91/0b/72910b438834b8fea590e60ed0620035.jpg");
+    background-size: cover;
     margin: auto;
     padding: 20px;
     border: solid 3px #777777;
