@@ -1,6 +1,10 @@
 const animationTime = 0.35;
 var animationRunning = false;
 
+const shrinkLen = 50;
+const bigshrinkLen = 150;
+// const cutLen = 35;
+
 window.addEventListener("load", () => {
     document.getElementById("counterCartonase").textContent = "1 / " + JSON.parse(localStorage.getItem(localStorageEntry)).intrebari.length;
 
@@ -40,6 +44,10 @@ function setupCartonas(INDEXCARTON) {
     butondreapta.setAttribute("onclick", `switchCartonas(1, ${INDEXCARTON})`);
 
     intrebare.textContent = dataIntrebari[INDEXCARTON];
+    if (intrebare.textContent.length <= shrinkLen) intrebare.style.fontSize = "250%"
+    if (intrebare.textContent.length > shrinkLen) intrebare.style.fontSize = "200%";
+    if (intrebare.textContent.length > bigshrinkLen) intrebare.style.fontSize = "125%";
+
     for (let rasp of raspunsuri)
         rasp.children[0].textContent = `${raspunsuri.indexOf(rasp) + 1}. ` + dataRaspunsuri[INDEXCARTON][raspunsuri.indexOf(rasp)];
 }
@@ -54,9 +62,6 @@ function dezvaluieCartonas(state) {
 function switchCartonas(direction, indexfrom) {
     if (animationRunning) return;
 
-    // console.log(document.getElementById("intrebare-cartonas").textContent, Number(JSON.parse(localStorage.getItem(localStorageEntry)).intrebari.indexOf(document.getElementById("intrebare-cartonas").textContent) + 1)
-
-        
     // intoarce cartonasul pe fata in caz ca e pe spate
     dezvaluieCartonas(1);
 

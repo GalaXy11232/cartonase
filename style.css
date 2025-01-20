@@ -34,7 +34,7 @@ body {
 
 .back {
     font-size: 40px;
-    position: absolute;
+    position: fixed;
     bottom: 10px;
     right: 10px;
     border: none;
@@ -283,17 +283,24 @@ input[type="text"]:focus {
     position: relative;
     transition: 0.6s;
     transform-style: preserve-3d;
-    max-height: 30vh;
+    max-height: 35vh;
+    min-height: 225px;
+    max-width: 25vh;
+    width: 250px;
     background-color: var(--content_clr);
     border: solid 3px #777777;
     min-width: 150px;
     border-radius: 20px;
     padding: 10px;
 }
+/* .cartonas:hover {height: max-content;} */
 
+.titlu-cartonas, .cartonas-link {text-align: center;}
 
 .cartonasSpate, .cartonasFata {
-    text-align: center;
+    width: 100%;
+    height: 100%;
+    /* text-align: center; */
     backface-visibility: hidden;
     position: absolute;
     top: 0;
@@ -301,12 +308,20 @@ input[type="text"]:focus {
 }
 
 .cartonasFata {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
     transform: rotateY(0deg);
     position: relative !important;
     z-index: 2;
 }
+.cartonasFata h3 {margin: 0;}
 
 .cartonasSpate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     width: 100%;
     height: 100%;
     transform: rotateY(180deg);
@@ -319,12 +334,19 @@ input[type="text"]:focus {
 
 .cartonas-link {
     position: relative;
+    display: block;
     transition: 0.2s ease-in;
 }
 .cartonas-link:hover {
     color: #000;
     cursor: pointer;
     font-size: 150%;
+}
+#showhideLink {
+    position: absolute !important;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 #adaugaCartonasLink {
@@ -361,8 +383,11 @@ input[type="text"]:focus {
     border-radius: 20px;
     width: 80%;
   }
+
   /*Save/Create button*/
   #salveazaModal, #creeazaModal {
+    cursor: pointer;
+
     border-radius: 20px;
     font-size: 30px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;

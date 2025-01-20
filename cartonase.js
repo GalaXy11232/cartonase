@@ -1,13 +1,14 @@
+const maxIntrebareLength = 35;
+const butcheredTextLength = 15;
+
 // creeaza pentru fiecare intrebare un cartonas
 window.addEventListener("load", () => {
     checkCartonase();
-
-    // console.log(document.getElementById("container-cartonase").children[0].children[0].children[0].children[1])
 })
 
 function checkCartonase() {
-    for (data in JSON.parse(localStorage.getItem(localStorageEntry)).intrebari)
-        creeazaCartonas(data);
+    for (dataIndex in JSON.parse(localStorage.getItem(localStorageEntry)).intrebari)
+        creeazaCartonas(dataIndex);
 }
 
 
@@ -45,23 +46,27 @@ function creeazaCartonas(cartonasIndex) {
     edit.className = "cartonas-link";
     edit.textContent = "✏";
     edit.setAttribute("onclick", `openModal(${cartonasIndex})`)
-
     
 
-    intrebare.textContent = question[cartonasIndex];
+    intrebare.textContent = checkForShorten(maxIntrebareLength, butcheredTextLength, question[cartonasIndex]);
+
+
     for (ans in answers[cartonasIndex]) {
         if (ans == 4) break;
         
         let raspuns = document.createElement("li");
-        raspuns.textContent = answers[cartonasIndex][ans];
+        raspuns.textContent = checkForShorten(20, 7, answers[cartonasIndex][ans]);
 
         listaRaspunsuri.appendChild(raspuns);
     }
 
     afiseaza.textContent = "Afiseaza"
+    afiseaza.setAttribute("id", "showhideLink");
     afiseaza.setAttribute("onclick", `flipCartonas(${cartonasIndex}, 0)`);
     afiseaza.className = "cartonas-link";
-    ascunde.textContent = "Ascunde"
+    ascunde.textContent = "Ascunde";
+    ascunde.setAttribute("id", "showhideLink");
+    ascunde.style.paddingBottom = "5px";
     ascunde.setAttribute("onclick", `flipCartonas(${cartonasIndex}, 1)`);
     ascunde.className = "cartonas-link";
 
@@ -74,8 +79,8 @@ function creeazaCartonas(cartonasIndex) {
     frontContainer.appendChild(document.createElement("br"));
     frontContainer.appendChild(afiseaza);
 
-    let raspunsCorect = document.createElement("h1");
-    raspunsCorect.textContent = answers[cartonasIndex][answers[cartonasIndex][4] - 1];
+    let raspunsCorect = document.createElement("h3");
+    raspunsCorect.textContent = checkForShorten(maxIntrebareLength, butcheredTextLength, answers[cartonasIndex][answers[cartonasIndex][4] - 1]);
     backContainer.appendChild(raspunsCorect);
     backContainer.appendChild(ascunde);
 

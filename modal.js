@@ -37,8 +37,8 @@ function openModal(fromWhichIndex) {
         else radioNodes[i].checked = false;
     }
 
-    document.getElementById("salveazaModal").style.visibility = "visible";
-    document.getElementById("creeazaModal").style.visibility = "collapse";
+    document.getElementById("salveazaModal").style.display = "block";
+    document.getElementById("creeazaModal").style.display = "none";
 
     // arata-l la final
     modal.style.display = "block";
@@ -109,8 +109,8 @@ function buildCartonas() {
         document.getElementById("modalCheckbox4")
     ]
 
-    document.getElementById("salveazaModal").style.visibility = "collapse";
-    document.getElementById("creeazaModal").style.visibility = "visible";
+    document.getElementById("salveazaModal").style.display = "none";
+    document.getElementById("creeazaModal").style.display = "block";
 
     intrebareaNode.value = "";
     intrebareaNode.placeholder = "Introdu intrebarea dorita";
