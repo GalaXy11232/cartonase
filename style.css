@@ -20,41 +20,28 @@
     to {bottom: 0; opacity: 1;}
 }
 
-html {
+/* html {
     background-color: #b48563;
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
-}
+} */
 
-/* Hide scrollbar for IE, Edge, and Firefox */
+/* Hide scrollbar for IE, Edge, and Firefox
 body {
-    overflow: -moz-scrollbars-none; /* For Firefox */
-    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+    overflow: -moz-scrollbars-none;
+    -ms-overflow-style: none; 
 }
 
-/* Hide scrollbar for WebKit browsers */
 body::-webkit-scrollbar {
     display: none;
-}
+} */
 
-body {
-    position: absolute;
+html {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-image: url("https://media.istockphoto.com/id/1465198091/photo/old-wood-background-dark-wooden-abstract-texture.jpg?s=170667a&w=0&k=20&c=s4ARmIiW2nrquEbg_JAXQhWBDDJj3kQPQQtd6XaWYOE=");
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-    background-size: 100% auto; /* Scales the image to cover the entire element */
-    background-position: center; /* Centers the image */
-    top: 0;
-    left: 0;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    background-repeat: repeat-y;
-    width: 100vw; /* Ensures the width covers the entire viewport */
-    height: 100vh; /* Ensures the height covers the entire viewport */
-    z-index: -100;
+    background: url("https://media.istockphoto.com/id/1465198091/photo/old-wood-background-dark-wooden-abstract-texture.jpg?s=170667a&w=0&k=20&c=s4ARmIiW2nrquEbg_JAXQhWBDDJj3kQPQQtd6XaWYOE=") repeat fixed 100%;
+    background-size: cover;    
 }
 
 #START {
@@ -98,7 +85,7 @@ body {
     background-image: url("https://images.pexels.com/videos/4822860/black-and-white-background-cool-wallpaper-hd-wallpapers-motion-4822860.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
     background-size: cover;
     border-radius: 15px;
-    margin: 0 20px;
+    /* margin: 0 20px; */
 }
 
 
