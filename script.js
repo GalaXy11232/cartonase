@@ -110,7 +110,6 @@ function existsIn(obj, key, value) {
 
 
 
-
 function loadfile() {
     clearStorage();
 
@@ -132,6 +131,11 @@ function loadfile() {
 }
 
 function savefile() {
+    if (JSON.parse(localStorage.getItem(localStorageEntry)).intrebari.length == 0) {
+        alert("Nu poti salva un fisier gol. Te rog creează cel puțin un cartonaș.");
+        return;
+    }
+
     let blob = new Blob([localStorage.getItem(localStorageEntry)], {type: "application/json"})
     
     let url = URL.createObjectURL(blob);
