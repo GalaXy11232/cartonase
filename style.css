@@ -38,6 +38,14 @@ body::-webkit-scrollbar {
     display: none;
 } */
 
+.copyright {
+    position: fixed;
+    font-size: 70%;
+    color: gray;
+    left: 0;
+    bottom: 0;
+}
+
 html {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background: url("https://media.istockphoto.com/id/1465198091/photo/old-wood-background-dark-wooden-abstract-texture.jpg?s=170667a&w=0&k=20&c=s4ARmIiW2nrquEbg_JAXQhWBDDJj3kQPQQtd6XaWYOE=") repeat fixed 100%;
