@@ -41,7 +41,7 @@ body::-webkit-scrollbar {
 .copyright {
     position: fixed;
     font-size: 70%;
-    color: gray;
+    color: #555;
     left: 0;
     bottom: 0;
 }
