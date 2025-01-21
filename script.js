@@ -83,8 +83,7 @@ function updateData(question, answers) {
 function clearStorage() {
     let container = document.getElementById("container-cartonase");
     for (let node in container.children) {
-        // if (node.getAttribute("id") == "cartonasEntry") continue;
-        if (typeof(container.children[1]) == "undefined") break;
+        if (typeof(container.children[1]) == "undefined") {console.log("bkera"); break; }
         
         container.removeChild(container.children[1]);
     }
@@ -125,9 +124,9 @@ function loadfile() {
         reader.readAsText(file);
         setTimeout(() => {
             checkCartonase();
-        }, 100);
+        }, 300);
 
-    }, 100);
+    }, 500);
 }
 
 function savefile() {
