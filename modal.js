@@ -82,7 +82,7 @@ function saveModal() {
     dataRaspunsuri[index][4] = Number(correctIndex) + 1;
 
 
-    clearStorage();
+    clearStorage(localStorageEntry);
     localStorage.setItem(localStorageEntry, JSON.stringify(dataObj));
     checkCartonase();
 

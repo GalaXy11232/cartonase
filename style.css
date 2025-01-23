@@ -20,23 +20,27 @@
     to {bottom: 0; opacity: 1;}
 }
 
-/* html {
-    background-color: #b48563;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-} */
-
-/* Hide scrollbar for IE, Edge, and Firefox
-body {
-    overflow: -moz-scrollbars-none;
-    -ms-overflow-style: none; 
+#options {
+    font-size: 40px;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    border-radius: 20px;
+    padding: 10px;
+    color: #000;
+    background-color: var(--content_clr);
+    text-decoration: none;
+    z-index: 2;
+    transition: 0.25s ease;
 }
+#options:hover {transform: scale(1.1);}
 
-body::-webkit-scrollbar {
-    display: none;
-} */
+.option-boolean {
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+.option-boolean:hover {transform: scale(1.1);}
+
 
 .copyright {
     position: fixed;
@@ -51,6 +55,24 @@ html {
     background: url("https://media.istockphoto.com/id/1465198091/photo/old-wood-background-dark-wooden-abstract-texture.jpg?s=170667a&w=0&k=20&c=s4ARmIiW2nrquEbg_JAXQhWBDDJj3kQPQQtd6XaWYOE=") repeat fixed 100%;
     background-size: cover;    
 }
+
+#options-table {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    padding-top: 5%;
+    border-collapse: collapse;
+    text-align: center;
+}
+#options-table th { 
+    font-size: 250%; 
+    text-align: center; 
+    padding: 10px 15px; 
+    width: 75vw;
+    
+}
+#options-table td, th { border: 4px solid black; background-color: var(--content_clr); }
+#options-table td {width: 50%; padding: 20px 0; font-size: 150%;}
 
 #START {
     position: absolute;
@@ -274,6 +296,8 @@ input[type="text"]:focus {
 
 
 #intrebare-cartonas {
+    margin: 25px 15px;
+    word-break: keep-all;
     text-align: center;
     font-size: 250%;
 }

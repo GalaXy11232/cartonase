@@ -1,12 +1,27 @@
+const GREEN = "rgb(0, 255, 0)";
+const RED = "rgb(255, 0, 0)";
+const VALID = "rgb(0, 175, 0)";
+
+
 const localStorageEntry = "JSONData"
+const optionsEntry = "options"
+
 const defaultJSONStructure = {
     "intrebari": [],
     "raspunsuri": []
 }
 
+const defaultOptions = {
+    "afiseaza_raspunsuri_on_showcase": true
+}
+
+
+
 window.addEventListener("load", (ev) => {
     // console.log(JSON.parse(localStorage.getItem(localStorageEntry))["raspunsuri"].includes(["1", " 2", " 3", " 4", " 1"]))
     checkLocalStorage(localStorageEntry, defaultJSONStructure);
+    checkLocalStorage(optionsEntry, defaultOptions, 1);
+
     // updateData(localStorageEntry, "intrebari", "balls");
 })
 
@@ -50,16 +65,43 @@ function addInputData(inputIDs) {
 }
 
 
-function checkLocalStorage(entry, value) {
+function checkLocalStorage(entry, value, mode = 0) {
+    // 0 - load; 1 - check and add for new; 2 - deep modify (unused)
+    // console.log(Object.keys(JSON.parse(localStorage.getItem(entry))).length, Object.keys(value).length)
+    // for (let ans of Object.values(value)) console.log(value, ans);
+    
     if (localStorage.getItem(entry) == null) {
         localStorage.setItem(entry, JSON.stringify(value));
 
-        console.log("created new localStorage!", JSON.parse(localStorage.getItem(entry)));
-    
+        console.log(`created new Storage for ${entry}, `, JSON.parse(localStorage.getItem(entry)));
         return;
     }
 
-    console.log("loaded localStorage!");
+    // update from preset object to localstorage
+    else if (Object.keys(JSON.parse(localStorage.getItem(entry))).length != Object.keys(value).length) {
+        let q = JSON.parse(localStorage.getItem(entry));
+
+
+        var Vvals = [];
+        var Qvals = []
+        for (let [key, val] of Object.entries(q)) Qvals.push([key, val]);
+        for (let [key, val] of Object.entries(value)) Vvals.push([key, val]);
+
+        q = value;
+        
+        for (let ix in Vvals) 
+            if (ix < Qvals.length) q[Vvals[ix][0]] = Qvals[ix][1];
+            else q[Vvals[ix][0]] = Vvals[ix][1];
+
+        
+        localStorage.setItem(entry, JSON.stringify(q));
+
+        console.log(`updated localStorage for ${entry}!`);
+        return;
+    }
+
+
+    console.log(`loaded localStorage for ${entry}!`);
     return true;
 }
 
@@ -80,16 +122,23 @@ function updateData(question, answers) {
     creeazaCartonas(dataObj.intrebari.length - 1);
 }
 
-function clearStorage() {
-    let container = document.getElementById("container-cartonase");
-    for (let node in container.children) {
-        if (typeof(container.children[1]) == "undefined") {console.log("bkera"); break; }
-        
-        container.removeChild(container.children[1]);
-    }
+function clearStorage(entry) {
+    let defaultEntry;
 
-    localStorage.clear();
-    localStorage.setItem(localStorageEntry, JSON.stringify(defaultJSONStructure));
+    if (entry == localStorageEntry) defaultEntry = defaultJSONStructure;
+    else defaultEntry = null;
+
+    if (entry == localStorageEntry) {
+        let container = document.getElementById("container-cartonase");
+        for (let node in container.children) {
+            if (typeof(container.children[1]) == "undefined") {console.log("bkera"); break; }
+            
+            container.removeChild(container.children[1]);
+        }
+
+        localStorage.setItem(entry, JSON.stringify(defaultEntry));
+        // localStorage.setItem(localStorageEntry, JSON.stringify(defaultJSONStructure));
+    }
 }
 
 
@@ -110,7 +159,7 @@ function existsIn(obj, key, value) {
 
 
 function loadfile() {
-    clearStorage();
+    clearStorage(localStorageEntry);
 
     setTimeout(() => {
         let file = document.getElementById("fileinput").files[0];
@@ -143,7 +192,7 @@ function savefile() {
     a.download = "intrebari.json";
     a.click();
 
-    clearStorage();
+    clearStorage(localStorageEntry);
     a.remove();
     URL.revokeObjectURL(url);
 }

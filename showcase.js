@@ -26,6 +26,10 @@ function setupCartonas(INDEXCARTON) {
     const dataIntrebari = dataObj.intrebari;
     const dataRaspunsuri = dataObj.raspunsuri;
 
+    const optiuni = JSON.parse(localStorage.getItem(optionsEntry));
+    const afisRaspunsuri = optiuni["afiseaza_raspunsuri_on_showcase"];
+
+
     let intrebare = document.getElementById("intrebare-cartonas");
     let raspunsuri = [
         document.getElementById("raspuns1"),
@@ -48,8 +52,19 @@ function setupCartonas(INDEXCARTON) {
     if (intrebare.textContent.length > shrinkLen) intrebare.style.fontSize = "200%";
     if (intrebare.textContent.length > bigshrinkLen) intrebare.style.fontSize = "125%";
 
-    for (let rasp of raspunsuri)
-        rasp.children[0].textContent = `${raspunsuri.indexOf(rasp) + 1}. ` + dataRaspunsuri[INDEXCARTON][raspunsuri.indexOf(rasp)];
+    if (afisRaspunsuri)
+        for (let rasp of raspunsuri)
+            rasp.children[0].textContent = `${raspunsuri.indexOf(rasp) + 1}. ` + dataRaspunsuri[INDEXCARTON][raspunsuri.indexOf(rasp)];
+    else {
+        let wrapper = document.getElementsByClassName("raspunsuri-wrapper")[0];
+        let fataCartonas = document.getElementById("fataShowcase");
+
+        wrapper.style.display = "none";
+        if (fataCartonas.children[1].tagName.toLowerCase() == "hr") fataCartonas.children[1].remove(); 
+
+        fataCartonas.style.cssText = "display: flex; justify-content: center; align-items: center; flex-wrap: wrap; white-space: normal; word-break:break-all;";
+        // intrebare.style.transform = "scale(1.2)";
+    }
 }
 
 
