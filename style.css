@@ -33,7 +33,10 @@
     z-index: 2;
     transition: 0.25s ease;
 }
-#options:hover {transform: scale(1.1);}
+#options:hover {
+    transform: scale(1.1);
+    background-color: #88f;
+}
 
 .option-boolean {
     cursor: pointer;
@@ -69,9 +72,16 @@ html {
     text-align: center; 
     padding: 10px 15px; 
     width: 75vw;
-    
+    background: no-repeat center center fixed;
+    background-image: url("https://images.pexels.com/videos/4822860/black-and-white-background-cool-wallpaper-hd-wallpapers-motion-4822860.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+    background-size: cover;
 }
-#options-table td, th { border: 4px solid black; background-color: var(--content_clr); }
+#options-table td, th {
+    border: 4px solid black;
+    background: no-repeat center center fixed;
+    background-image: url("https://images.pexels.com/videos/4822860/black-and-white-background-cool-wallpaper-hd-wallpapers-motion-4822860.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+    background-size: cover;
+}
 #options-table td {width: 50%; padding: 20px 0; font-size: 150%;}
 
 #START {
@@ -97,7 +107,7 @@ html {
     padding: 10px;
     color: #000;
     background-color: var(--content_clr);
-    transition: 0.3s background-color ease-in;
+    transition: 0.3s ease;
     text-decoration: none;
 }
 
@@ -132,6 +142,7 @@ html {
 
 .back:hover {
     background-color: #ff5555;
+    transform: scale(1.1);
 }
 
 .title {
